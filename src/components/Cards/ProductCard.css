@@ -4,10 +4,7 @@
   overflow: hidden;
   border: 2px solid var(--color-border-dray);
   border-radius: 10px;
-}
-
-.product-card-container:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .product-image-container {
@@ -57,6 +54,12 @@
 .like-icon {
   font-size: 20px;
   cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .product-card-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, HeroSection, Navbar } from "./components";
+import { Footer, Header, HeroSection, Navbar } from "./components";
 import { Shop } from "./pages";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <Shop />
+      <Footer />
     </>
   );
 }
