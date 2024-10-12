@@ -1,5 +1,6 @@
 import React from "react";
 import { Header, HeroSection, Navbar } from "./components";
+import { Shop } from "./pages";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <Navbar />
       <HeroSection />
+      <Shop />
     </>
   );
 }
