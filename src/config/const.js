@@ -29,3 +29,5 @@ export const PAYMENT_IMAGES = [
   { name: "Apple Pay", image: ApplePay },
   { name: "O Pay", image: OPay },
 ];
+
+export const CATEGORY_OPTIONS = ["Men", "Women", "Baby & Kids"];

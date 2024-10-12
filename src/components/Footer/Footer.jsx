@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { PAYMENT_IMAGES } from "../../config";
+import { MetaMuseLists, QuickLinkList } from "../Lists";
+import { Accordion } from "../Accordion";
 
 const Footer = () => {
+  const [emailInput, setEmailInput] = useState("");
   return (
     <footer className="footer-container">
       <section className="footer-sub-container">
         <div>
           <h5>be the first to know</h5>
           <p>Sign up for updates from mettā muse.</p>
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <input type="email" placeholder="Enter your email..." />
-            <button>subscribe</button>
+          <div
+            style={{
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            <input
+              type="email"
+              placeholder="Enter your email..."
+              onChange={(e) => setEmailInput(e.target.value)}
+            />
+            <button disabled={!emailInput}>subscribe</button>
           </div>
         </div>
         <div>
@@ -29,37 +43,30 @@ const Footer = () => {
         </div>
       </section>
       <section className="footer-sub-container">
-        <div>
+        <div className="mobile-hidden">
           <h5>mettā muse</h5>
-          <ul>
-            <li>About Us</li>
-            <li>Stories</li>
-            <li>Artisans</li>
-            <li>Boutiques</li>
-            <li>Contact US</li>
-            <li>EU Compliance Doc</li>
-          </ul>
+          <MetaMuseLists />
         </div>
-        <div>
+        <div className="mobile-hidden">
           <h5>quick links</h5>
-          <ul>
-            <li>Order & Shipping</li>
-            <li>Join/Login as as Seller</li>
-            <li>Payment & Pricing</li>
-            <li>Return & Refunds</li>
-            <li>FAQs</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
-          </ul>
+          <QuickLinkList />
+        </div>
+        <div className="mobile-visible">
+          <Accordion title={"mettā muse"}>
+            <MetaMuseLists />
+          </Accordion>
+          <Accordion title={"quick links"}>
+            <QuickLinkList />
+          </Accordion>
         </div>
         <div>
           <h5>follow us</h5>
           <div>
-            <CiInstagram />
-            <CiLinkedin />
+            <CiInstagram size={30} />
+            <CiLinkedin size={30} />
           </div>
           <h5>mettā muse Accepts</h5>
-          <div>
+          <div className="payments-container">
             {PAYMENT_IMAGES.map((item, i) => (
               <img width={56} key={i} src={item?.image} alt={item?.name} />
             ))}
@@ -67,7 +74,10 @@ const Footer = () => {
         </div>
       </section>
       <section className="footer-sub-container">
-        <p>Copyright © 2023 mettamuse. All rights reserved.</p>
+        <p>
+          Copyright © 2024 mettamuse. All rights reserved. Developed by Tanzeel
+          Ansari.
+        </p>
       </section>
     </footer>
   );

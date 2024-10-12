@@ -1,0 +1,35 @@
+.accordion-container {
+  width: 100%;
+  height: fit-content;
+  padding: 10px 0px;
+  border-bottom: 1px solid var(--color-border-dray);
+  margin: 10px 0px;
+}
+
+.accordion-title-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.accordion-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-title-container .rotate {
+  transform: rotate(180deg);
+}
+
+.hidden {
+  width: 100%;
+  display: none;
+}
